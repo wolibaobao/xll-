@@ -2,6 +2,9 @@
 
 > A Vue.js project
 
+![Alt text](/src/assets/dt.gif)
+
+
 ## Build Setup
 
 ``` bash
