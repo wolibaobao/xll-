@@ -56,12 +56,12 @@
 				</el-menu-item>
 				<!-- </router-link> -->
 
-				<!-- <router-link :to='{name:"jiemeng"}' class="wzbd"> -->
-				<el-menu-item index="/jiemeng">
-					<i class="el-icon-document"></i>
-					<span slot="title"> {{$t('message.jm')}}</span>
+				<el-menu-item index="/tianqi">
+					<i class="el-icon-edit-outline"></i>
+					<span slot="title">实时天气</span>
 				</el-menu-item>
-				<!-- </router-link> -->
+
+				
 
 				
 
@@ -76,6 +76,15 @@
 					<i class="el-icon-edit-outline"></i>
 					<span slot="title">信息列表</span>
 				</el-menu-item>
+
+
+				<!-- <router-link :to='{name:"jiemeng"}' class="wzbd"> -->
+				<el-menu-item index="/jiemeng">
+					<i class="el-icon-document"></i>
+					<span slot="title"> {{$t('message.jm')}}</span>
+				</el-menu-item>
+				<!-- </router-link> -->
+				
 
 				<!-- <router-link :to='{name:"grxx"}' class="wzbd"> -->
 				<el-menu-item index="/grxx">
@@ -109,10 +118,10 @@
 					<span>{{$t('message.yonghu')}}：<b>{{name}}</b></span>
 					<span @click="tc">{{$t('message.tuichu')}}</span>
 					<!-- <span style="color:white;">{{$t('message.text')}}</span> -->
-					<el-select v-model="selectValue" @change="langChange" placeholder="请选择语言" style="width:120px;">
+					<!-- <el-select v-model="selectValue" @change="langChange" placeholder="请选择语言" style="width:120px;">
 						<el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
 						</el-option>
-					</el-select>
+					</el-select> -->
 				</div>
 
 			</div>
@@ -121,12 +130,15 @@
 					
 				<div class="you">
 					<el-breadcrumb class="app-breadcrumb"  separator-class="el-icon-arrow-right" style="width:95%;margin:0 auto;line-height:50px;">
-						<el-breadcrumb-item v-for="(item)  in levelList" :key="item.path" v-if="item.meta.title" style="color:#333;">
+						
+						<el-breadcrumb-item v-for="(item)  in levelList"  v-if="item.meta.title" :key="item.path" style="color:#333;">
+							
 							<router-link :to="item.redirect||item.path" style="color:#333;">{{item.meta.title}}</router-link>
 						</el-breadcrumb-item>
+
 					</el-breadcrumb>
 
-					<router-view>
+					<router-view >
 
 					</router-view>
 
@@ -451,12 +463,12 @@
 	}
 	
 	.el-menu-item-group {
-		background:#343a3ec2 !important;
+		background:#2c3543 !important;
 	} 
 
 	.el-submenu .el-menu {
 		border: none;
-		background: #343a3ec2;
+		background: #2c3543;
 	}
 	
 	

@@ -234,6 +234,7 @@ export default {
             radio: this.ruleForm.resource,
             textarea: this.ruleForm.desc
           };
+          
           console.log(data);
           axios.post("/users.json	", data).then(res => {
             this.$message({

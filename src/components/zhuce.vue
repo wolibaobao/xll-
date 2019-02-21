@@ -92,6 +92,8 @@ export default {
         callback();
       }
     };
+
+    
     return {
       ruleForm: {
         name: "",

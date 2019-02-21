@@ -42,7 +42,7 @@ export default {
              currentPage:1, //初始页
                 pagesize:15,    //    每页的数据
                 userList: [],
-                loading2: true
+                loading2: false
         }
         
     },
@@ -52,7 +52,7 @@ export default {
         .then((e)=>{
             // console.log(e.data)
            setTimeout(()=>{ 
-               this.loading2 =false
+            //    this.loading2 =false
                for(var k in e.data){
                     //  console.log(e.data[k])
                      this.msg = e.data[k] 

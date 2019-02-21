@@ -1,7 +1,7 @@
 <template>
-	<div class="bj_login" style="overflow:hidden">
+	<div class="bj_login" style="overflow:hidden"  :style="{backgroundImage: 'url(' + bj + ')'}">
     
-	<div class="container bao_login animated flipInX " >
+	<div class="container bao_login animated flipInX "  >
       <h1 class="ld">欢迎来到我的系统</h1>
         <el-form  :label-position="labelPosition" :model="ruleForm"  :rules="rules" ref="ruleForm"  label-width="100px" class="demo-ruleForm form_login">
             <el-form-item label="姓名：" prop="name" style="color:white" >
@@ -31,6 +31,7 @@ import axios from 'axios'
 		data(){
 			return{
         labelPosition: 'right',
+        bj:'http://demo.cssmoban.com/cssthemes4/cpts_928_bub/images/banner.jpg',
         ruleForm: {
           name:"齐龙龙",
           Mima:'...'
@@ -50,7 +51,10 @@ import axios from 'axios'
     // created(){
 		// 	this.ruleForm.name = sessionStorage.getItem('name')
 			
-		// },
+    // },
+    mounted(){
+        console.log(this.bj)
+    },
       methods: {
         submitForm(formName) {
           this.$refs[formName].validate((valid) => {
@@ -118,7 +122,7 @@ import axios from 'axios'
 .bj_login{
 	width: 100%;
 	height: 100vh;
-	background:url('http://demo.cssmoban.com/cssthemes4/cpts_928_bub/images/banner.jpg');
+
 	background-size: cover;
 }
 .bao_login{

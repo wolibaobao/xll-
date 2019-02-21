@@ -7,7 +7,7 @@ const en = {
         'tuichu': 'Signout',
         'home': 'User information',
         'add_xx': 'Add information',
-        'jm': 'QIGongXieMeng',
+        'jm': 'answer',
         'gyzz': 'About author',
         'wbk': 'Textbox'
     },

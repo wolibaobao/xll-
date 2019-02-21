@@ -28,6 +28,7 @@
 				let myChart = this.$echarts.init(document.getElementById('myChart'))
 				let myChart2 = this.$echarts.init(document.getElementById('myChart2'))
 				// 绘制图表
+				var a = ['css3', 'Vue.js', 'javascript', 'Photoshop', 'Jquery', 'ddd']
 				myChart.setOption({
 					title: {
 						// text: '世界人口总量',
@@ -54,7 +55,7 @@
 					},
 					yAxis: {
 						type: 'category',
-						data: ['css3', 'Vue.js', 'javascript', 'Photoshop', 'Jquery', 'html5']
+						data: a
 					},
 					series: [
 						{
@@ -65,6 +66,7 @@
 					]
 				});
 
+				var b=  ['写代码', '打豆豆', '看电影', '睡觉觉']
 				myChart2.setOption({
 					title: {
 						
@@ -78,7 +80,7 @@
 					legend: {
 						// orient: 'vertical',
 						left: 'center',
-						data: ['写代码', '打豆豆', '看电影', '睡觉']
+						data:b
 					},
 					series: [{
 						name: '数据分析',
@@ -99,7 +101,7 @@
 							},
 							{
 								value: 90,
-								name: '睡觉'
+								name: '睡觉觉'
 							}
 						],
 						itemStyle: {

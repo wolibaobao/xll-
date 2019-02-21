@@ -7,17 +7,11 @@ Vue.config.productionTip = false
 
 //element ui
 import ElementUI from 'element-ui'
-// import enLocale from 'element-ui/lib/locale/lang/en'
-// import zhLocale from 'element-ui/lib/locale/lang/zh-CN'
-// import twLocale from 'element-ui/lib/locale/lang/zh-TW'
 import 'element-ui/lib/theme-chalk/index.css';
 Vue.use(ElementUI);
 
-//引入路由
-import VueRouter from 'vue-router'
-Vue.use(VueRouter)
 
-import axios from 'axios' //axios
+import axios from './http'
 axios.defaults.baseURL = 'https://wd5203671990lmrgyr.wilddogio.com/' //配置默认路径
 Vue.prototype.$axios = axios //配置Vue原型,在任何组件中都可以正常使用axios
 
@@ -45,35 +39,7 @@ Vue.prototype.$echarts = echarts
 import { store } from './store/strore.js'
 
 //路由文件在这里面
-import { routes } from './routers.js'
-
-const router = new VueRouter({
-    // mode: 'history',
-    //	history
-    routes
-})
-
-
-//守卫
-router.beforeEach((to, from, next) => {
-    if (to.matched.some(record => record.meta.requireLogin)) { // 判断该路由是否需要登录权限
-        if (sessionStorage.getItem('login')) { // 判断当前用户的登录信息loginInfo是否存在
-            next();
-        } else {
-            Vue.prototype.$message({
-                type: 'error',
-                message: '您还未登录哦亲!'
-            });
-            next({
-                path: '/login'
-            })
-        }
-    } else {
-        next();
-    }
-
-})
-
+import router from './routers.js'
 
 
 /* eslint-disable no-new */

@@ -416,12 +416,12 @@
 				var arr = [];
 				for(let key in e.data) {
 					e.data[key].index = key;
-					// console.log(e.data[key].index)
+					console.log(e.data[key].index)
 
 					this.msg.push(e.data[key]);
 					
 					arr.push(e.data[key]);
-					// console.log(arr);
+					console.log(arr);
 					this.$store.commit("msg", arr);
 				}
 			});
